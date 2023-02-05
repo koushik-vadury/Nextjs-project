@@ -1,5 +1,12 @@
 .list {
   width: 90%;
   max-width: 50rem;
-  margin: 5rem auto;
+  /* margin: 5rem auto; */
+  /* margin: 0 auto; */
+}
+
+@media (min-width: 768px) {
+  .list {
+    margin: 0 auto;
+  }
 }
