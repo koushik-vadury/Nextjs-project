@@ -4,6 +4,7 @@ import { getFilteredEvents } from "../../helpers/api-util";
 import ResultTiile from "../../components/event-detail/results-title";
 import ErrorAlert from "../../components/ui/error-alert";
 import Button from "../../components/ui/button";
+import Head from "next/head";
 
 const FilteredEventsPage = (props) => {
   const router = useRouter();
@@ -40,6 +41,13 @@ const FilteredEventsPage = (props) => {
   const date = new Date(props.year, props.month - 1);
   return (
     <>
+      <Head>
+        <title>Filtered Events</title>
+        <meta
+          name="description"
+          content={`All events for ${props.year}/${props.month}.`}
+        />
+      </Head>
       <ResultTiile date={date} />
       <EventList items={filteredEvents} />
     </>
